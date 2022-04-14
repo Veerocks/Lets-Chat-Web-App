@@ -34,10 +34,15 @@ function addRoom(){
   firebase.database().ref("/").child(room_name).update({
     purpose:"adding user name"
   });
-  window.location="kwitter_message.html";
+  window.location="kwitter_page.html";
 }
 function logOut(){
   window.location="index.html";
   localStorage.removeItem("user_name");
   localStorage.removeItem("room_name");
+}
+
+function redirectToRoomName(name){
+  localStorage.setItem("room_name", name);
+  window.location="kwitter_page.html";
 }
